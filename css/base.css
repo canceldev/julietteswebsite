@@ -42,7 +42,8 @@ a {
   display: flex;
   justify-content: center;
   gap: 24px;
-  padding: 16px 0;
+  padding: 16px 10px; /* reduce horizontal padding for mobile */
+  flex-wrap: wrap;    /* allow links to go to next line if needed */
 }
 
 .nav a {
