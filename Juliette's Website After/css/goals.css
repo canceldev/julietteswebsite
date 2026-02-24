@@ -1,0 +1,72 @@
+.goal-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.progress-bar {
+  height: 12px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  opacity: 0.85;
+  padding-top: 6px;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(to right, #ff2f7d, #ff6a3d);
+  transition: width 0.4s ease;
+}
+
+.goal {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  opacity: 0;
+  animation: goalIn 0.4s ease forwards;
+}
+
+.goal input {
+  accent-color: #ff2f7d;
+}
+
+.goal input:checked + span {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.heart-burst {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.burst-heart {
+  position: absolute;
+  font-size: 32px;
+  animation: burst 1.3s ease forwards;
+}
+
+@keyframes goalIn {
+  to { opacity:1; transform:translateY(0); }
+}
+
+@keyframes burst {
+  to {
+    transform: translate(var(--x), var(--y)) scale(2);
+    opacity: 0;
+  }
+}
