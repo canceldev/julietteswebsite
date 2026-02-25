@@ -1,0 +1,61 @@
+.accomplishments .page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 24px 120px;
+  text-align: center;
+}
+
+.accomplishments h1 {
+  font-size: 2.4rem;
+  margin-bottom: 50px;
+}
+
+.accomplishments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+.accomplishment-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 26px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+
+  opacity: 0;
+  transform: translateY(14px);
+  animation: cardIn 0.5s ease forwards;
+}
+
+.accomplishment-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.accomplishment-card p {
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+.accomplishment-card:nth-child(1){animation-delay:.1s}
+.accomplishment-card:nth-child(2){animation-delay:.2s}
+.accomplishment-card:nth-child(3){animation-delay:.3s}
+.accomplishment-card:nth-child(4){animation-delay:.4s}
+.accomplishment-card:nth-child(5){animation-delay:.5s}
+.accomplishment-card:nth-child(6){animation-delay:.5s}
+
+.accomplishment-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
